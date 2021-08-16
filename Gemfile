@@ -50,3 +50,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'friendly_id', '~> 5.4.0'
 gem 'devise', '~> 4.8'
+
+gem 'bootstrap', '~> 4.6.0'
+gem 'jquery-rails'
+
+gem 'julltron_view_tool', git: 'https://github.com/joelgroomer/julltron_view_tool'
