@@ -53,3 +53,5 @@ gem 'devise', '~> 4.8'
 
 gem 'bootstrap', '~> 4.6.0'
 gem 'jquery-rails'
+
+gem 'julltron_view_tool', git: 'https://github.com/joelgroomer/julltron_view_tool'
