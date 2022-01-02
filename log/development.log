@@ -462,3 +462,40 @@ Processing by PortfoliosController#show as HTML
 Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 1.5ms | Allocations: 12958)
 
 
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/portfolio/4" for ::1 at 2022-01-02 10:32:53 -0800
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (2.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:70:in `set_portfolio_item'
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/show.html.erb within layouts/portfolio
+  [1m[36mTechnology Load (3.5ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:19
+  Rendered portfolios/show.html.erb within layouts/portfolio (Duration: 6.0ms | Allocations: 1259)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_portfolio_nav.html.erb (Duration: 1.3ms | Allocations: 555)
+  Rendered shared/_portfolio_masthead.html.erb (Duration: 0.8ms | Allocations: 207)
+  Rendered shared/_portfolio_footer.html.erb (Duration: 0.7ms | Allocations: 177)
+  Rendered layout layouts/portfolio.html.erb (Duration: 33.5ms | Allocations: 10137)
+Completed 200 OK in 66ms (Views: 31.3ms | ActiveRecord: 21.1ms | Allocations: 15730)
+
+
+Started GET "/portfolio/4" for ::1 at 2022-01-02 10:33:22 -0800
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:70:in `set_portfolio_item'
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/show.html.erb within layouts/portfolio
+  [1m[36mTechnology Load (0.8ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies" WHERE "technologies"."portfolio_id" = $1[0m  [["portfolio_id", 4]]
+  ↳ app/views/portfolios/show.html.erb:19
+  Rendered portfolios/show.html.erb within layouts/portfolio (Duration: 2.9ms | Allocations: 1252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_portfolio_nav.html.erb (Duration: 1.7ms | Allocations: 555)
+  Rendered shared/_portfolio_masthead.html.erb (Duration: 0.9ms | Allocations: 207)
+  Rendered shared/_portfolio_footer.html.erb (Duration: 0.8ms | Allocations: 177)
+  Rendered layout layouts/portfolio.html.erb (Duration: 30.4ms | Allocations: 9975)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 1.5ms | Allocations: 12223)
+
+
