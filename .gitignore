@@ -1,6 +1,3 @@
 node_modules
 /log
 /public/packs
-/tmp
-/tmp/development_secret.txt
-/tmp/miniprofiler
