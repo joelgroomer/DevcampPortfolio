@@ -1522,3 +1522,70 @@ Processing by BlogsController#index as HTML
 Completed 200 OK in 5923ms (Views: 5917.2ms | ActiveRecord: 2.4ms | Allocations: 152004)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5396089536776303610)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPositionToPortfolios (20220102234849)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "portfolios" ADD "position" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220102234849"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5396089536776303610)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mPortfolio Load (5.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Update (0.5ms)[0m  [1m[33mUPDATE "portfolios" SET "updated_at" = $1, "position" = $2 WHERE "portfolios"."id" = $3[0m  [["updated_at", "2022-01-02 23:54:01.702824"], ["position", 1], ["id", 10]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Update (0.3ms)[0m  [1m[33mUPDATE "portfolios" SET "updated_at" = $1, "position" = $2 WHERE "portfolios"."id" = $3[0m  [["updated_at", "2022-01-02 23:54:15.041435"], ["position", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/portfolios" for ::1 at 2022-01-02 15:54:22 -0800
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (2.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY position ASC[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered collection of portfolios/_portfolio_item.html.erb [10 times] (Duration: 2.3ms | Allocations: 790)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 20.3ms | Allocations: 7679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_portfolio_nav.html.erb (Duration: 2.0ms | Allocations: 457)
+  Rendered shared/_portfolio_masthead.html.erb (Duration: 1.4ms | Allocations: 218)
+  Rendered shared/_portfolio_footer.html.erb (Duration: 1.0ms | Allocations: 182)
+  Rendered layout layouts/portfolio.html.erb (Duration: 453.4ms | Allocations: 37918)
+Completed 200 OK in 534ms (Views: 455.9ms | ActiveRecord: 14.1ms | Allocations: 57393)
+
+
+Started GET "/portfolios" for ::1 at 2022-01-02 15:54:23 -0800
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (1.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY position ASC[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered collection of portfolios/_portfolio_item.html.erb [10 times] (Duration: 2.0ms | Allocations: 481)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 6.0ms | Allocations: 1666)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_portfolio_nav.html.erb (Duration: 0.5ms | Allocations: 258)
+  Rendered shared/_portfolio_masthead.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered shared/_portfolio_footer.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered layout layouts/portfolio.html.erb (Duration: 31.1ms | Allocations: 9236)
+Completed 200 OK in 35ms (Views: 29.9ms | ActiveRecord: 1.8ms | Allocations: 10420)
+
+
+Started GET "/portfolios" for ::1 at 2022-01-02 15:55:24 -0800
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (1.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY position ASC[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered collection of portfolios/_portfolio_item.html.erb [10 times] (Duration: 0.8ms | Allocations: 527)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 13.3ms | Allocations: 6203)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_portfolio_nav.html.erb (Duration: 0.6ms | Allocations: 308)
+  Rendered shared/_portfolio_masthead.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered shared/_portfolio_footer.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/portfolio.html.erb (Duration: 35.8ms | Allocations: 14010)
+Completed 200 OK in 71ms (Views: 31.6ms | ActiveRecord: 8.9ms | Allocations: 26943)
+
+
