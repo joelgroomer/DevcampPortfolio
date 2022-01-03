@@ -6,8 +6,9 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery-ui
 
-
+require("packs/html.sortable")
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
