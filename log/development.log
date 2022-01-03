@@ -1807,3 +1807,94 @@ Entrypoint html = js/html-f2093afb6a53c593e4a9.js js/html-f2093afb6a53c593e4a9.j
 Completed 200 OK in 20585ms (Views: 20509.8ms | ActiveRecord: 15.7ms | Allocations: 261172)
 
 
+Started GET "/portfolios" for ::1 at 2022-01-02 20:24:40 -0800
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (4.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY position ASC[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered collection of portfolios/_portfolio_item.html.erb [10 times] (Duration: 0.8ms | Allocations: 481)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 6.9ms | Allocations: 1764)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 3dc1829136703c134ffc
+Version: webpack 4.46.0
+Time: 1028ms
+Built at: 01/02/2022 8:24:44 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-0ba78d54b410ab83455a.js    147 KiB  application  [emitted] [immutable]  application
+js/application-0ba78d54b410ab83455a.js.map    163 KiB  application  [emitted] [dev]        application
+           js/html-f2093afb6a53c593e4a9.js     25 KiB         html  [emitted] [immutable]  html
+       js/html-f2093afb6a53c593e4a9.js.map   27.6 KiB         html  [emitted] [dev]        html
+                             manifest.json  654 bytes               [emitted]              
+Entrypoint application = js/application-0ba78d54b410ab83455a.js js/application-0ba78d54b410ab83455a.js.map
+Entrypoint html = js/html-f2093afb6a53c593e4a9.js js/html-f2093afb6a53c593e4a9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 665 bytes {application} [built]
+[./app/javascript/packs/html.sortable.js] 20.8 KiB {html} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery-ui' in '/Users/jgroomer/dev/dissecting_rails/DevcampPortfolio/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 17:0-19
+
+
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+  Rendered shared/_portfolio_nav.html.erb (Duration: 0.8ms | Allocations: 258)
+  Rendered shared/_portfolio_masthead.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered shared/_portfolio_footer.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered layout layouts/portfolio.html.erb (Duration: 3943.2ms | Allocations: 10584)
+Completed 200 OK in 3972ms (Views: 3939.5ms | ActiveRecord: 21.4ms | Allocations: 14899)
+
+
+Started GET "/portfolios" for ::1 at 2022-01-02 20:24:51 -0800
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/portfolio.html.erb
+  Rendering portfolios/index.html.erb within layouts/portfolio
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY position ASC[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered collection of portfolios/_portfolio_item.html.erb [10 times] (Duration: 1.9ms | Allocations: 639)
+  Rendered portfolios/index.html.erb within layouts/portfolio (Duration: 7.9ms | Allocations: 2127)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jgroomer/dev/dissecting_rails/DevcampPortfolio/public/packs
+[Webpacker] Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: ad68f8b4e9b39984edf1
+Version: webpack 4.46.0
+Time: 3779ms
+Built at: 01/02/2022 8:24:58 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-7bab5589955214331233.js      1 MiB  application  [emitted] [immutable]  application
+js/application-7bab5589955214331233.js.map   1.19 MiB  application  [emitted] [dev]        application
+           js/html-f2093afb6a53c593e4a9.js     25 KiB         html  [emitted] [immutable]  html
+       js/html-f2093afb6a53c593e4a9.js.map   27.6 KiB         html  [emitted] [dev]        html
+                             manifest.json  654 bytes               [emitted]              
+Entrypoint application = js/application-7bab5589955214331233.js js/application-7bab5589955214331233.js.map
+Entrypoint html = js/html-f2093afb6a53c593e4a9.js js/html-f2093afb6a53c593e4a9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 665 bytes {application} [built]
+[./app/javascript/packs/html.sortable.js] 20.8 KiB {html} {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 5 hidden modules
+
+  Rendered shared/_portfolio_nav.html.erb (Duration: 2.8ms | Allocations: 441)
+  Rendered shared/_portfolio_masthead.html.erb (Duration: 1.4ms | Allocations: 207)
+  Rendered shared/_portfolio_footer.html.erb (Duration: 1.2ms | Allocations: 176)
+  Rendered layout layouts/portfolio.html.erb (Duration: 6828.9ms | Allocations: 12195)
+Completed 200 OK in 6835ms (Views: 6829.9ms | ActiveRecord: 0.9ms | Allocations: 13832)
+
+

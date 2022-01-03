@@ -6,7 +6,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require jquery-ui
 
 require("packs/html.sortable")
 import Rails from "@rails/ujs"
@@ -17,3 +16,10 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import 'jquery-ui'
+$(
+        () => {
+                $('.sortable').sortable()
+        }
+)
